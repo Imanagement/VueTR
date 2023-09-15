@@ -1,24 +1,17 @@
-# delievery-food
+# ТЗ (VUE)
 
-## Project setup
+## Скачать репозиторий
 ```
-npm install
-```
-
-### Compiles and hot-reloads for development
-```
-npm run serve
+git clone https://github.com/Imanagement/VueTR.git
 ```
 
-### Compiles and minifies for production
+## Part 2. Установка приложения
 ```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
+cd VueTR/delievery-food && npm install 
 ```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+## Part 2. Запуск приложения
+
+```
+npm run serve 
+```
