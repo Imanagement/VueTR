@@ -1,16 +1,18 @@
 const { defineConfig } = require('@vue/cli-service')
-const AutoImport = require('unplugin-auto-import/webpack')
-const Components = require('unplugin-vue-components/webpack')
 const { ElementPlusResolver } = require('unplugin-vue-components/resolvers')
 
 module.exports = defineConfig({
   transpileDependencies: true,
-  pluginOptions: [
-      AutoImport({
-        resolvers: [ElementPlusResolver()],
-      }),
-      Components({
-        resolvers: [ElementPlusResolver()],
-      }),
-  ]
+  pluginOptions: {
+    configureWebpack: {
+      plugins: [
+        require('unplugin-vue-components/webpack')({
+          resolvers: [ElementPlusResolver()],
+        }),
+        require('unplugin-auto-import/webpack')({
+          resolvers: [ElementPlusResolver()],
+        }),
+      ],
+    }
+  }
 })
