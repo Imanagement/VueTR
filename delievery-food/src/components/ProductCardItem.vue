@@ -1,7 +1,9 @@
 <script setup>
 import {ref, defineProps, computed} from 'vue'
+import { useCartStore } from '@/stores/cart'
 const props = defineProps(['product'])
 const product = ref(props.product)
+const cartStore = useCartStore()
 const getProductImage = () => require('@/assets/img/' + product.value.image.src)
 const getIngredients = computed(() => {
   return product.value.ingredients.map(ingredient => ingredient.name).join(', ')
@@ -22,7 +24,7 @@ const getIngredients = computed(() => {
       </div>
       <!-- /.card-info -->
       <div class="card-buttons">
-        <button class="button button-primary button-add-cart">
+        <button @click="cartStore.addToCart(product)" class="button button-primary button-add-cart">
           <span class="button-card-text">В корзину</span>
           <span class="button-cart-svg"></span>
         </button>

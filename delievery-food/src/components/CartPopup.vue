@@ -1,5 +1,8 @@
 <script setup>
 import { useModalStore } from '@/stores/modal'
+import { useCartStore } from '@/stores/cart'
+
+const cartStore = useCartStore()
 const modalStore = useModalStore()
 </script>
 
@@ -12,53 +15,23 @@ const modalStore = useModalStore()
       </div>
       <!-- /.modal-header -->
       <div class="modal-body">
-        <div class="food-row">
-          <span class="food-name">Ролл угорь стандарт</span>
-          <strong class="food-price">250 ₽</strong>
+        <div class="food-row" v-for="cartItem in cartStore.cart" :key="cartItem.id">
+          <span class="food-name">{{ cartItem.product.name }}</span>
+          <strong class="food-price">{{ cartItem.product.price }} ₽</strong>
           <div class="food-counter">
-            <button class="counter-button">-</button>
-            <span class="counter">1</span>
-            <button class="counter-button">+</button>
+            <button class="counter-button" @click="cartStore.reduceQuantity(cartItem.id)">-</button>
+            <span class="counter">{{ cartItem.quantity }}</span>
+            <button class="counter-button" @click="cartStore.addQuantity(cartItem.id)">+</button>
           </div>
         </div>
-        <!-- /.foods-row -->
-        <div class="food-row">
-          <span class="food-name">Ролл угорь стандарт</span>
-          <strong class="food-price">250 ₽</strong>
-          <div class="food-counter">
-            <button class="counter-button">-</button>
-            <span class="counter">1</span>
-            <button class="counter-button">+</button>
-          </div>
-        </div>
-        <!-- /.foods-row -->
-        <div class="food-row">
-          <span class="food-name">Ролл угорь стандарт</span>
-          <strong class="food-price">250 ₽</strong>
-          <div class="food-counter">
-            <button class="counter-button">-</button>
-            <span class="counter">1</span>
-            <button class="counter-button">+</button>
-          </div>
-        </div>
-        <!-- /.foods-row -->
-        <div class="food-row">
-          <span class="food-name">Ролл угорь стандарт</span>
-          <strong class="food-price">250 ₽</strong>
-          <div class="food-counter">
-            <button class="counter-button">-</button>
-            <span class="counter">1</span>
-            <button class="counter-button">+</button>
-          </div>
-        </div>
-        <!-- /.foods-row -->
+
       </div>
       <!-- /.modal-body -->
       <div class="modal-footer">
-        <span class="modal-pricetag">1250 ₽</span>
+        <span class="modal-pricetag">{{ cartStore.getCartTotalSummary }} ₽</span>
         <div class="footer-buttons">
           <button class="button button-primary">Оформить заказ</button>
-          <button class="button clear-cart">Отмена</button>
+          <button @click="cartStore.resetCart()" class="button clear-cart">Отмена</button>
         </div>
       </div>
       <!-- /.modal-footer -->
