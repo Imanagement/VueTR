@@ -13,7 +13,7 @@ const getIngredients = computed(() => {
     <img :src="getProductImage()" :alt="product.image.alt" class="card-image">
     <div class="card-text">
       <div class="card-heading">
-        <h3 class="card-title card-title-reg">{{ product.title }}</h3>
+        <h3 class="card-title card-title-reg">{{ product.name }}</h3>
       </div>
       <!-- /.card-heading -->
       <div class="card-info">

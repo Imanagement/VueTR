@@ -1,75 +1,93 @@
 export const restaurants = [
     {
         id: 1,
-        title: "Пицца плюс",
+        name: "Пицца плюс",
         delieveryTime: 50,
         rating: "4.5",
         price: "900",
         category: {
             id: 1,
-            title: "Пицца"
+            name: "Пицца"
         },
-        image: "pizza-plus/preview.jpg"
+        image: { 
+            src: "pizza-plus/preview.jpg",
+            alt: "image"
+        }
     },
     {
         id: 2,
-        title: "Тануки",
+        name: "Тануки",
         delieveryTime: 60,
         rating: "4.5",
         price: "1200",
         category: {
             id: 2,
-            title: "Суши, Роллы",
+            name: "Суши, Роллы",
         },
-        image: "tanuki/preview.jpg"
+        image: { 
+            src: "tanuki/preview.jpg",
+            alt: "image"
+        }
     },
     {
         id: 3,
-        title: "FoodBand",
+        name: "FoodBand",
         delieveryTime: 40,
         rating: "4.5",
         price: "450",
         category: {
             id: 1,
-            title: "Пицца"
+            name: "Пицца"
         },
-        image: "food-band/preview.jpg"
+        image: { 
+            src: "food-band/preview.jpg",
+            alt: "image"
+        }
     },
     {
         id: 4,
-        title: "Палки скалки",
+        name: "Палки скалки",
         delieveryTime: 55,
         rating: "4.5",
         price: "500",
         category: {
             id: 1,
-            title: "Пицца"
+            name: "Пицца"
         },
-        image: "palki-skalki/preview.jpg"
+        image: { 
+            src: "palki-skalki/preview.jpg",
+            alt: "image"
+        }
     },
     {
         id: 5,
-        title: "Гуси Лебеди",
+        name: "Гуси Лебеди",
         delieveryTime: 75,
         rating: "4.5",
         price: "1000",
         category: {
             id: 3,
-            title: "Русская кухня"
+            name: "Русская кухня"
         },
-        image: "gusi-lebedi/preview.jpg"
+        image: { 
+            src: "gusi-lebedi/preview.jpg",
+            alt: "image"
+        }
     },
     {
         id: 6,
-        title: "PizzaBurger",
+        name: "PizzaBurger",
         delieveryTime: 45,
         rating: "4.5",
         price: "700",
         category: {
             id: 1,
-            title: "Пицца"
+            name: "Пицца"
         },
-        image: "pizza-burger/preview.jpg"
+        image: { 
+            src: "pizza-burger/preview.jpg",
+            alt: "image"
+        }
     },
 ]
 export const pizzas = [

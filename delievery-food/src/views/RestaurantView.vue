@@ -23,7 +23,7 @@ onMounted(() => {
 		<div class="container">
 			<section class="menu">
 				<div class="section-heading">
-					<h2 class="section-title restaurant-title">{{ restaurant.title }}</h2>
+					<h2 class="section-title restaurant-title">{{ restaurant.name }}</h2>
 					<div class="card-info">
 						<div class="rating">
 							{{ restaurant.rating }}

@@ -3,7 +3,7 @@ import { defineProps, ref, computed } from 'vue'
 
 const props = defineProps(['item'])
 const item = ref(props.item)
-const getItemImage = () => require("@/assets/img/" + item.value.image)
+const getItemImage = () => require("@/assets/img/" + item.value.image.src)
 
 const getLink = computed(() => {
   return `/restaurants/${item.value.id}/`
@@ -16,7 +16,7 @@ const getLink = computed(() => {
       <img :src="getItemImage()" alt="image" class="card-image" />
       <div class="card-text">
         <div class="card-heading">
-          <h3 class="card-title">{{ item.title }}</h3>
+          <h3 class="card-title">{{ item.name }}</h3>
           <span class="card-tag tag">{{ item.delieveryTime }} min</span>
         </div>
         <!-- /.card-heading -->
@@ -25,7 +25,7 @@ const getLink = computed(() => {
             {{ item.rating }}
           </div>
           <div class="price">От {{ item.price }}</div>
-          <div class="category">{{ item.category.title }}</div>
+          <div class="category">{{ item.category.name }}</div>
         </div>
         <!-- /.card-info -->
       </div>
