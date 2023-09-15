@@ -3,7 +3,7 @@ import { computed } from 'vue'
 import { restaurants } from '@/data'
 import RestaurantCardItem from '@/components/RestaurantCardItem.vue'
 const getRestaurants = computed(() => {
-  return restaurants.order
+  return restaurants
 })
 </script>
 <template>
