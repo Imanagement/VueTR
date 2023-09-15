@@ -8,7 +8,7 @@ const modalStore = useModalStore()
     <div class="modal-dialog">
       <div class="modal-header">
         <h3 class="modal-title">Корзина</h3>
-        <button class="close">&times;</button>
+        <button class="close" @click="modalStore.changeCartVisibility()">&times;</button>
       </div>
       <!-- /.modal-header -->
       <div class="modal-body">

@@ -17,7 +17,7 @@ const modalStore = useModalStore()
           <span class="button-auth-svg"></span>
           <span class="button-text">Войти</span>
         </button>
-        <button class="button button-cart" id="cart-button">
+        <button @click="modalStore.changeCartVisibility()" class="button button-cart" id="cart-button">
           <span class="button-cart-svg"></span>
           <span class="button-text">Корзина</span>
         </button>
