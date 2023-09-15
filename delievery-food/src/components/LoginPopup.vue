@@ -1,7 +1,12 @@
+<script setup>
+import { useModalStore } from '@/stores/modal'
+const modalStore = useModalStore()
+
+</script>
 <template>
-  <div class="modal-auth">
+  <div class="modal-auth" v-if="modalStore.showLoginModalWindow">
     <div class="modal-dialog modal-dialog-auth">
-      <button class="close-auth">&times;</button>
+      <button class="close-auth" @click="modalStore.changeLoginVisibility()">&times;</button>
       <form id="logInForm">
         <fieldset class="modal-body">
           <legend class="modal-title">Авторизация</legend>

@@ -1,5 +1,6 @@
 <script setup>
-
+import { useModalStore } from "@/stores/modal";
+const modalStore = useModalStore()
 </script>
 <template>
   <div class="container">
@@ -12,7 +13,7 @@
       </label>
       <div class="buttons">
         <span class="user-name"></span>
-        <button class="button button-primary button-auth">
+        <button @click="modalStore.changeLoginVisibility()" class="button button-primary button-auth">
           <span class="button-auth-svg"></span>
           <span class="button-text">Войти</span>
         </button>

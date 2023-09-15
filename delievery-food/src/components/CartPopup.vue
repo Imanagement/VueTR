@@ -1,5 +1,10 @@
+<script setup>
+import { useModalStore } from '@/stores/modal'
+const modalStore = useModalStore()
+</script>
+
 <template>
-  <div class="modal modal-cart">
+  <div class="modal modal-cart" v-if="modalStore.showCartModalWindow">
     <div class="modal-dialog">
       <div class="modal-header">
         <h3 class="modal-title">Корзина</h3>
