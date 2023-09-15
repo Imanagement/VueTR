@@ -1,14 +1,18 @@
 <script setup>
-import {defineProps, ref} from "vue"
+import { defineProps, ref, computed } from 'vue'
 
 const props = defineProps(['item'])
 const item = ref(props.item)
 const getItemImage = () => require("@/assets/img/" + item.value.image)
 
+const getLink = computed(() => {
+  return `/restaurants/${item.value.id}/`
+})
+
 </script>
 <template>
   <div class="card">
-    <a class="card card-restaurant">
+    <router-link :to="getLink" class="card card-restaurant">
       <img :src="getItemImage()" alt="image" class="card-image" />
       <div class="card-text">
         <div class="card-heading">
@@ -26,7 +30,7 @@ const getItemImage = () => require("@/assets/img/" + item.value.image)
         <!-- /.card-info -->
       </div>
       <!-- /.card-text -->
-    </a>
+    </router-link>
     <!-- /.card -->
   </div>
 </template>
